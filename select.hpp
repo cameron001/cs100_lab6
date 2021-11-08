@@ -36,6 +36,10 @@ public:
 
     // Derived classes can instead implement this simpler interface.
     virtual bool select(const std::string& s) const = 0;
+
+    int returnColumn() {
+	return column;
+    }
 };
 
 #endif //__SELECT_HPP__

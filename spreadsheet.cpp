@@ -40,3 +40,30 @@ int Spreadsheet::get_column_by_name(const std::string& name) const
             return i;
     return -1;
 }
+
+//TODO implement print_selection
+void Spreadsheet::print_selection(std::ostream& out) const {
+	if (select) {
+		//std::cout << "in select\n";
+       		for (int i= 0; i < data.size(); i++) {
+            		//std::cout << "in loop\n";
+			if(select->select(this, i)) {
+                		//std::cout << "in if\n";
+				for (int j = 0; j < data.at(i).size(); j++) {
+                   			//std::cout << "in for\n";
+			 		out << cell_data(i,j) << " ";
+                		}
+               			out << "\n";
+            		}
+       		}
+    	}
+        else {
+                for (int i = 0; i < data.size(); i++) {
+                	for (int j = 0; j < data.at(i).size(); j++) {
+                		out << cell_data(i,j) << " ";
+            		}
+            		out << "\n";
+        	}
+	}
+}
+
