@@ -1,0 +1,8 @@
+bin/
+lib/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+spreadsheet
+test
+cmake_install.cmake
